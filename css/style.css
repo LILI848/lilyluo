@@ -108,6 +108,10 @@ img {
   /* 直接添加background-color会导致出现一个300px的box，这是无法修改的，所以需要添加div */
 }
 
+.contact-text {
+  font-size: 75%;
+}
+
 .contact-email {
   margin-top: 3rem;
   color: var(--white);
