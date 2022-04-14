@@ -242,7 +242,7 @@ nav a:hover {
 }
 
 /*桌面版*/
-@media (min-width: 550px) {
+@media (min-width: 850px) {
   #projects {
     max-width: 1200px;
     margin: 0 auto;
