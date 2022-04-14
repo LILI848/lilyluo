@@ -1,0 +1,307 @@
+/* variables declared here - these are the colors, as well as the font stacks and sizes. */
+
+:root {
+  --black: #0b0c10;
+  --dkblue: #1f2833;
+  --Plum: #45a29e;
+  --whitblue: #a0dbf2;
+  --midblue: #165f8c;
+  --aqua: #66fcf1;
+  --white: #c5c6c7;
+  --font-size: 1.3rem;
+  --epilogue: "Epilogue", Nunito Sans;
+  --sans: "Source Serif Pro", sans-serif;
+}
+
+/* border box model: https://css-tricks.com/box-sizing/ */
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* generic styles for the page */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--sans);
+  background-color: var(--black);
+  color: var(--white);
+  font-size: var(--font-size);
+}
+/* 清除heading的原始格式，若两个元素在垂直方向的margin有重合的部分，它会自动取其中那个较大值，此处文字没有重叠是因为段落自带margin 1m，若heading变成0了，则margin会自动取较大值，即p自带的1m； */
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+a {
+  color: var(--whitblue);
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+/*设置图片和页面大小一致*/
+img {
+  width: 100%;
+}
+
+/*backgound color divs*/
+.section-dkblue {
+  background-color: var(--dkblue);
+}
+
+.gradient {
+  height: 1.5px;
+
+  background: linear-gradient(
+    93deg,
+    rgba(247, 248, 250, 1) 5%,
+    rgba(134, 251, 251, 0.5620052770448549) 84%
+  );
+}
+
+/* intro styles */
+#intro {
+  padding: 4rem 1rem 10rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#intro p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#intro .name {
+  font-family: var(--sans);
+  font-size: 1rem;
+}
+
+.name span {
+  font-family: var(--epilogue);
+  font-size: 4rem;
+  color: var(--aqua);
+  display: block;
+  font-weight: 300;
+}
+
+#intro h2 {
+  font-size: 4rem;
+  font-weight: normal;
+}
+
+/* contact styles */
+
+#contact {
+  width: 400px;
+  margin: 0 auto;
+  padding: 3rem 0;
+  text-align: center;
+  /* 直接添加background-color会导致出现一个400px的box，这是无法修改的，所以需要添加div */
+}
+
+.contact-email {
+  margin-top: 3rem;
+  color: var(--white);
+  font-family: var(--sans);
+}
+
+/*navbar*/
+nav {
+  font-family: var(--epilogue);
+  font-size: 80%;
+  padding: 1rem;
+}
+
+nav h1 a {
+  font-family: var(--sans);
+}
+
+/*nav模板*/
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+nav [class*="fa-"] {
+  font-size: 150%;
+  color: var(--aqua);
+}
+
+nav h1 [class*="fa-"] {
+  font-size: 120%;
+  color: var(--aqua);
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.button {
+  background-color: var(--dkblue);
+  border: solid 0.5px var(--aqua);
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.button:hover {
+  color: white;
+  background-color: var(--dkblue);
+}
+
+@media (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto; /*make it center*/
+  }
+  nav li:first-child {
+    flex-basis: auto; /*取消了100%，将logo变成跟其他的同一行*/
+    text-align: left; /*取消居中*/
+    /*这是默认的flexbox，空隙是even的*/
+    margin-right: auto; /*将logo隔开，将navbar之外的所有空隙塞进第一个child和剩下的child之间*/
+  }
+}
+
+/*projects*/
+
+#projects {
+  padding: 4rem 1rem;
+}
+
+#projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: calc(2.5rem * 1.5);
+}
+
+#projects h3 {
+  color: var(--aqua);
+}
+
+#projects h4 {
+  font-size: 1rem;
+  font-family: var(--epilogue);
+  margin: 0; /*清除文字上下行自带的默认空隙*/
+}
+
+#projects ul {
+  font-family: var(--epilogue);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.blackbox {
+  background-color: #093a40;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 1rem;
+}
+.clickme {
+  color: var(--aqua);
+}
+
+#projects img {
+  margin: 2rem 0 4rem 0;
+  border-left: 1px solid var(--aqua);
+  border-top: 1px solid var(--aqua);
+  border-radius: 25px;
+  padding: 1rem;
+}
+
+/*桌面版*/
+@media (min-width: 550px) {
+  #projects {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  article {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /*页面平均分成10fr*/
+    gap: 1rem;
+  }
+
+  #projects img {
+    grid-column: 1/6; /*起始于1终止于6*/
+    grid-row: 1/2; /*从上到下起始于1终止于2，也就是第二行*/
+  }
+
+  .text {
+    order: 2;
+    text-align: right;
+    grid-column: 5/11; /*从左往右起始于5终止于11，起始处5和6有重合部分*/
+    grid-row: 1/2; /*从上到下起始于1终止于2，也就是第二行，与图片处于同一行*/
+  }
+  #projects ul {
+    justify-content: flex-end;
+  }
+
+  #projects .leftside .text {
+    grid-column: 1/6;
+    text-align: left;
+    order: 2;
+  }
+
+  #projects .leftside .rightside-img {
+    grid-column: 5/11;
+    grid-row: 1/2;
+  }
+
+  #projects .leftside ul {
+    justify-content: flex-start;
+  }
+}
+
+/*footer*/
+
+footer {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+footer p {
+  font-size: 70%;
+}
