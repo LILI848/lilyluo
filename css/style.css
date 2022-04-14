@@ -101,11 +101,11 @@ img {
 /* contact styles */
 
 #contact {
-  width: 350px;
+  width: 300px;
   margin: 0 auto;
   padding: 3rem 0;
   text-align: center;
-  /* 直接添加background-color会导致出现一个400px的box，这是无法修改的，所以需要添加div */
+  /* 直接添加background-color会导致出现一个300px的box，这是无法修改的，所以需要添加div */
 }
 
 .contact-email {
