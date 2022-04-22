@@ -236,6 +236,9 @@ nav a:hover {
 .clickme {
   color: var(--aqua);
 }
+.account-info {
+  color: var(--aqua);
+}
 
 #projects img {
   margin: 2rem 0 4rem 0;
